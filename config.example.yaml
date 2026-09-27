@@ -1,0 +1,104 @@
+# Stream Deck Linux + OBS starter configuration
+# Installed to: ~/.config/streamdeck-tool/config.yaml
+# Edit scene/input names so they exactly match OBS.
+# Use \n inside quoted labels for a second line.
+
+deck:
+  brightness: 75
+  font: "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+
+obs:
+  host: "localhost"
+  port: 4455
+  password: "CHANGE_ME"
+
+# Optional per-app audio controls. These can be changed or removed.
+audio_apps:
+  firefox: "Firefox"
+  discord: "Discord"
+  spotify: "Spotify"
+  game: "steam_app"
+
+pages:
+  - name: main
+    buttons:
+      0:
+        type: obs_scene
+        scene: "Starting Soon"
+        label: "Starting\nSoon"
+      1:
+        type: obs_scene
+        scene: "C920 Overhead"
+        label: "C920\nOverhead"
+      2:
+        type: obs_scene
+        scene: "P5 Detail"
+        label: "P5\nDetail"
+      3:
+        type: obs_scene
+        scene: "C920 Main + P5 Small"
+        label: "C920 Main\nP5 Small"
+      4:
+        type: obs_scene
+        scene: "P5 Main + C920 Small"
+        label: "P5 Main\nC920 Small"
+      5:
+        type: obs_scene
+        scene: "BRB"
+        label: "BRB"
+      6:
+        type: obs_toggle_mute_input
+        input: "Mic/Aux"
+        label: "Mic\nMute"
+      7:
+        type: obs_start_stop_record
+        label: "Record"
+      8:
+        type: obs_start_stop_stream
+        label: "Stream"
+      9:
+        type: volume_mute
+        app: discord
+        label: "Discord\nMute"
+      10:
+        type: volume_mute
+        app: spotify
+        label: "Spotify\nMute"
+      11:
+        type: media_prev
+        label: "Previous"
+      12:
+        type: media_play_pause
+        label: "Play/Pause"
+      13:
+        type: media_next
+        label: "Next"
+      14:
+        type: page
+        target: extras
+        label: "More >"
+
+  - name: extras
+    buttons:
+      0:
+        type: launch_app
+        command: "firefox"
+        label: "Firefox"
+      1:
+        type: run_command
+        command: "flatpak run com.discordapp.Discord"
+        label: "Discord"
+      2:
+        type: volume_adjust
+        app: game
+        delta: -10
+        label: "Game\nVol -"
+      3:
+        type: volume_adjust
+        app: game
+        delta: 10
+        label: "Game\nVol +"
+      14:
+        type: page
+        target: main
+        label: "< Back"
