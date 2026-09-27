@@ -1,0 +1,114 @@
+# ---------------------------------------------------------------------------
+# Stream Deck Linux Controller - example configuration
+# Copy this to config.yaml and edit. Reloads automatically when you save.
+# ---------------------------------------------------------------------------
+
+deck:
+  brightness: 75          # 0-100
+  font: "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+
+obs:
+  host: "localhost"
+  port: 4455
+  password: "CHANGE_ME"   # Tools -> WebSocket Server Settings in OBS
+
+# Friendly names -> the app/process name PulseAudio/PipeWire sees.
+# Find yours with: pactl list sink-inputs | grep application.name
+audio_apps:
+  firefox: "Firefox"
+  discord: "Discord"
+  spotify: "Spotify"
+  game: "steam_app"
+
+# Pages of buttons. Each physical key maps to an index (0-based, left to
+# right, top to bottom). "page_up"/"page_down" style buttons let you flip
+# between pages if you have more actions than keys.
+pages:
+  - name: main
+    buttons:
+      0:
+        type: obs_scene
+        scene: "Starting Soon"
+        label: "Starting"
+      1:
+        type: obs_scene
+        scene: "Main Camera"
+        label: "Main Cam"
+      2:
+        type: obs_scene
+        scene: "Screen Share"
+        label: "Screen"
+      3:
+        type: obs_scene
+        scene: "BRB"
+        label: "BRB"
+      4:
+        type: obs_toggle_source
+        scene: "Main Camera"
+        source: "Webcam"
+        label: "Cam On/Off"
+      5:
+        type: obs_toggle_mute_input
+        input: "Mic/Aux"
+        label: "Mic Mute"
+      6:
+        type: obs_start_stop_stream
+        label: "Stream"
+      7:
+        type: obs_start_stop_record
+        label: "Record"
+      8:
+        type: volume_mute
+        app: discord
+        label: "Discord\nMute"
+      9:
+        type: volume_mute
+        app: spotify
+        label: "Spotify\nMute"
+      10:
+        type: volume_adjust
+        app: game
+        delta: -10
+        label: "Game\nVol -"
+      11:
+        type: volume_adjust
+        app: game
+        delta: 10
+        label: "Game\nVol +"
+      12:
+        type: media_play_pause
+        label: "Play/Pause"
+      13:
+        type: media_prev
+        label: "Prev"
+      14:
+        type: media_next
+        label: "Next"
+      15:
+        type: page
+        target: extras
+        label: "More >"
+
+  - name: extras
+    buttons:
+      0:
+        type: run_command
+        command: "flatpak run com.discordapp.Discord"
+        label: "Discord"
+      1:
+        type: launch_app
+        command: "firefox"
+        label: "Firefox"
+      2:
+        type: run_command
+        command: "playerctl -p spotify play-pause"
+        label: "Spotify\nPlay"
+      3:
+        type: obs_toggle_source
+        scene: "Main Camera"
+        source: "Alert Box"
+        label: "Alerts"
+      15:
+        type: page
+        target: main
+        label: "< Back"
