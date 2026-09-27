@@ -270,4 +270,8 @@ This project exists because I wanted a Stream Deck on Linux that simply works as
 
 This is an AI-assisted original project. The initial application code was created with Anthropic Claude based on the project requirements. OpenAI ChatGPT was later used to help test, refine, package, document, and simplify installation.
 
+##Security note:
+
+This application does not automatically update itself or download code from third-party repositories. Install releases only from this official repository. Forks and modified copies are maintained by their respective authors and are not endorsed by this project.
+
 The project was assembled and tested for the specific goal of providing a simple, lightweight Stream Deck controller for OBS on Linux.
