@@ -121,11 +121,12 @@ The `\n` creates a line break on the physical Stream Deck button label.
 
 The included starter config contains example buttons for:
 
-- Starting Soon
-- C920 Overhead
-- P5 Detail
-- C920 Main + P5 Small
-- P5 Main + C920 Small
+- Starting
+- Ending
+- Camera 1
+- Camera 2
+- Camera 1 + Camera 2 Small
+- Camera 2 + Camera 1 Small
 - BRB
 - Mic mute
 - Record
