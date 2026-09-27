@@ -113,8 +113,8 @@ Example:
 ```yaml
 2:
   type: obs_scene
-  scene: "P5 Detail"
-  label: "P5\nDetail"
+  scene: "Camera 1"
+  label: "Camera 1\nDetail"
 ```
 
 The `\n` creates a line break on the physical Stream Deck button label.
