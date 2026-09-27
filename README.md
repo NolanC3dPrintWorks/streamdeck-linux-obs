@@ -48,7 +48,50 @@ In OBS Studio:
 
 ## Configure the Stream Deck
 
-Open:
+After installation and after logging out and back in:
+
+1. Open your **Home** folder.
+2. Navigate to:
+
+```text
+.config/streamdeck-tool/
+```
+
+If you do not see `.config`, press:
+
+```text
+Ctrl + H
+```
+
+to show hidden files and folders.
+
+3. Inside the `streamdeck-tool` folder, right-click an empty area and choose:
+
+**Open in Terminal**
+
+4. Open the configuration file with:
+
+```bash
+nano config.yaml
+```
+
+5. Edit your OBS connection settings and Stream Deck button configuration.
+
+6. Save the file in Nano:
+
+```text
+Ctrl + O
+```
+
+Press **Enter** to confirm the filename.
+
+7. Exit Nano:
+
+```text
+Ctrl + X
+```
+
+You can also open the configuration file from any terminal with:
 
 ```bash
 nano ~/.config/streamdeck-tool/config.yaml
