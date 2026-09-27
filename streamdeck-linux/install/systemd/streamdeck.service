@@ -1,0 +1,13 @@
+[Unit]
+Description=Elgato Stream Deck controller (OBS + audio + media)
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/share/streamdeck-tool/venv/bin/python -m streamdeck_tool.main
+WorkingDirectory=%h/.local/share/streamdeck-tool
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
