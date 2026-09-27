@@ -28,20 +28,20 @@ pages:
         label: "Starting\nSoon"
       1:
         type: obs_scene
-        scene: "C920 Overhead"
-        label: "C920\nOverhead"
+        scene: "Camera 1"
+        label: "Camera 1\nOverhead"
       2:
         type: obs_scene
-        scene: "P5 Detail"
-        label: "P5\nDetail"
+        scene: "Camera 2 Detail"
+        label: "Camera 2\nDetail"
       3:
         type: obs_scene
-        scene: "C920 Main + P5 Small"
-        label: "C920 Main\nP5 Small"
+        scene: "Camera 3 + Camera 2 Small"
+        label: "Cam1\nCam2"
       4:
         type: obs_scene
-        scene: "P5 Main + C920 Small"
-        label: "P5 Main\nC920 Small"
+        scene: "Camera 2 + Camera 1 Small"
+        label: "Cam2\nCam1"
       5:
         type: obs_scene
         scene: "BRB"
