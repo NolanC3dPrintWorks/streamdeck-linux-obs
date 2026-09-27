@@ -1,0 +1,4 @@
+# Elgato Stream Deck devices - allow access without root.
+# Covers Mini, Original, Original v2, MK.2, XL, XL v2, Plus, Pedal, Neo.
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fd9", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0fd9", MODE="0666", GROUP="plugdev", TAG+="uaccess"
